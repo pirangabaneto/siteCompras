@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('endereco');
             $table->string('telefone');
             $table->boolean('status');
+            $table->string('tipo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

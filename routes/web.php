@@ -18,9 +18,16 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Auth::routes();
-/*
-Route::get('/home', 'HomeController@index')->name('home');*/
+
+//home de cliente
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');;
 
 //definindo pagina inicial de cliente
 Route::get('/', 'ClienteController@index');
+
+//abrindo tela de cadastro de cliente
+Route::get('/cadastro', 'ClienteController@createCliente');
+
+//criando uma requisicao de cadastro de cliente
+Route::post('/cadastro', 'ClienteController@storeCliente')->name('cadastro');
 
