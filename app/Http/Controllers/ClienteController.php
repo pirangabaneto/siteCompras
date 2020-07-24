@@ -52,7 +52,7 @@ class ClienteController extends Controller
     $cliente->cpf = $request->input('cpf');
     $cliente->user_id = $usuario->id;
     $cliente->save();
-    return redirect('/')->with('success', 'Cadastrado com sucesso!');
+    return redirect('/cliente')->with('success', 'Cadastrado com sucesso!');
     }
 
 }
